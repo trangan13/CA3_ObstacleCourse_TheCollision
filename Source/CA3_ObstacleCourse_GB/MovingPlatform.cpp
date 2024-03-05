@@ -27,7 +27,6 @@ void AMovingPlatform::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	MovePlatform(DeltaTime);
-
 	RotatePlatform(DeltaTime);
 }
 
@@ -49,4 +48,5 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 
 void AMovingPlatform::RotatePlatform(float DeltaTime)
 {
-	UE_LOG(Lo
+	UE_LOG(LogTemp, Display, TEXT("%s Rotating..."), *GetName());
+}
