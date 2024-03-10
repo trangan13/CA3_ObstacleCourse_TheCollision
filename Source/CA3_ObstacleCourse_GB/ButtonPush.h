@@ -4,17 +4,17 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "Mover.generated.h"
+#include "ButtonPush.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class CA3_OBSTACLECOURSE_GB_API UMover : public UActorComponent
+class CA3_OBSTACLECOURSE_GB_API UButtonPush : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UMover();
+	UButtonPush();
 
 protected:
 	// Called when the game starts
@@ -24,16 +24,7 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-public:
+private:
 	UPROPERTY(EditAnywhere)
-	FVector MoveOffset;
-
-	UPROPERTY(EditAnywhere)
-	float MoveTime = 4;
-
-	UPROPERTY(EditAnywhere)
-	bool ShouldMove = false;
-
-	FVector OriginalLocation;
-		
+	float MaxGrabDistance = 400;
 };
